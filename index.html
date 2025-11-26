@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIN Chem</title>
+	
+<script>
+function loadPage(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("content").innerHTML = data;
+
+            // Run home.js AFTER home.html is loaded
+            if (page === "home.html") {
+                let script = document.createElement("script");
+                script.src = "home.js";
+                document.body.appendChild(script);
+            }
+        })
+        .catch(err => {
+            document.getElementById("content").innerHTML = "<p>Error loading page.</p>";
+        });
+}
+
+// Load default page
+loadPage("home.html");
+
+</script>
+	
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f9ff;
+            color: #333;
+        }
+
+        /* HEADER + MENU */
+        header {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            color: #02240b;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: weight;
+            display: flex;
+            justify-content: right;
+            gap: 2px;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+			background:#11043b;
+			padding:10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #327da8;
+        }
+
+        /* IMAGE SLIDER */
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            animation: slide 12s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { margin-left: 0; }
+            25% { margin-left: 0; }
+            35% { margin-left: -100%; }
+            60% { margin-left: -100%; }
+            70% { margin-left: -200%; }
+            100% { margin-left: -200%; }
+        }
+
+        
+
+        /* FOOTER */
+        footer {
+            background: #11043b;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header><img src="logo.jpg" alt="Logo" style="height:120px; margin-right:15px;">GAIN Chem Industries<br>Best Cleaning solution in your life</header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page1.html">About us</a>
+        <a href="page2.html">Contact</a>
+    </nav>
+	
+	
+
+    <!-- IMAGE SLIDER -->
+    <div class="slider">
+        <div class="slides">
+            <img src="img/sl1.jpg">
+            <img src="img/sl2.jpg">
+            <img src="img/sl3.jpg">
+        </div>
+    </div>
+	
+	<div id="content">Loading...</div>
+	
+
+
+
+
+
+	
+	
+
+    <footer>
+        <p>Contact: 070-3301302,0342264410 | Email: gainchem.gi@gmail.com</p>
+		<p>No 135,Mlos ela Rd,Kudauduwa,Horana,Sri Lanka</p>
+        <p>© 2025 Gainchem Website - All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
