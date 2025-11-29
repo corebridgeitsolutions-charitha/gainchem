@@ -12,6 +12,38 @@ function loadPage(page) {
         .then(data => {
             document.getElementById("content").innerHTML = data;
 
+            if (page === "home.html") {
+
+                // Remove old homeScript
+                let oldScript = document.getElementById("homeScript");
+                if (oldScript) oldScript.remove();
+
+                // Inject home.js
+                let script = document.createElement("script");
+                script.id = "homeScript";
+                script.src = "home.js?v=" + Date.now();
+                script.onload = () => {
+                    loadHomeProducts();   // call the function after script loads
+                };
+                document.body.appendChild(script);
+            }
+        })
+        .catch(err => {
+            document.getElementById("content").innerHTML = "<p>Error loading page.</p>";
+        });
+
+    var content = document.getElementById("content");
+    if (content)
+        content.scrollIntoView({ behavior: "smooth" });
+}
+
+
+function loadPage1(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("content").innerHTML = data;
+
             // Run home.js AFTER home.html is loaded
             if (page === "home.html") {
                 let script = document.createElement("script");

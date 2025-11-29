@@ -1,13 +1,16 @@
-let container = document.getElementById("products");
+function loadHomeProducts() {
+    let container = document.getElementById("products");
+    container.innerHTML = "";   // clear old items
 
-for (let i = 1; i <= 10; i++) {
-    let div = document.createElement("div");
-    div.className = "product";
+    for (let i = 1; i <= 10; i++) {
+        let div = document.createElement("div");
+        div.className = "product";
 
-    div.innerHTML = `
-        <img src="img/1.jpg">
-        <h4>Product ${i}</h4>
-    `;
+        div.innerHTML = `
+            <img src="img/1.jpg">
+            <h4>Product ${i}</h4>
+        `;
 
-    container.appendChild(div);
+        container.appendChild(div);
+    }
 }
