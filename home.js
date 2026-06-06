@@ -3,16 +3,16 @@ const products = [
     { name: "Gain all plus (4 ltr)", image: "2.png" },
     { name: "Gain toilet bowl cleaner (4 ltr)", image: "3.png" },
     { name: "Gain Lavender air freshener (4 ltr)", image: "4.png" },
-    { name: "Gain dish wash (4 ltr)", image: "5.PNG" },
+    { name: "Gain dish wash (4 ltr)", image: "5.png" },
 	{ name: "Gain Tyre polish (4 ltr)", image: "6.PNG" },
 	{ name: "Gain apple hand wash (4 ltr)", image: "7.png" },
 	{ name: "Gain mango air freshener (4 ltr)", image: "8.png" },
-	{ name: "Gain cinnamon disinfectant (4 ltr)", image: "9.PNG" },
+	{ name: "Gain cinnamon disinfectant (4 ltr)", image: "9.png" },
 	{ name: "Gain pink mist air freshener (4 ltr)", image: "10.png" },
-	{ name: "Gain apple hand wash (4 ltr)", image: "11.PNG" },
-	{ name: "Gain dash board shine (4 ltr)", image: "12.PNG" },
-	{ name: "Gain red berry air freshener (4 ltr)", image: "13.PNG" },
-	{ name: "Gain floral disinfectant (4 ltr)", image: "14.PNG" },
+	{ name: "Gain apple hand wash (4 ltr)", image: "11.png" },
+	{ name: "Gain dash board shine (4 ltr)", image: "12.png" },
+	{ name: "Gain red berry air freshener (4 ltr)", image: "13.png" },
+	{ name: "Gain floral disinfectant (4 ltr)", image: "14.png" },
 	{ name: "Gain lemon hand wash (4 ltr)", image: "15.png" }
 ];
 
