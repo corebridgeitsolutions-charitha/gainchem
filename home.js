@@ -1,5 +1,5 @@
 const products = [
-    { name: "Gain pine disinfectant (4 ltr)", image: "1.png" },
+    { name: "Gain pine disinfectant (4 ltr)", image: "10.png" },
     { name: "Gain all plus (4 ltr)", image: "2.png" },
     { name: "Gain toilet bowl cleaner (4 ltr)", image: "3.png" },
     { name: "Gain Lavender air freshener (4 ltr)", image: "4.png" },
