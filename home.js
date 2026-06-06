@@ -4,7 +4,7 @@ const products = [
     { name: "Gain toilet bowl cleaner (4 ltr)", image: "3.png" },
     { name: "Gain Lavender air freshener (4 ltr)", image: "4.png" },
     { name: "Gain dish wash (4 ltr)", image: "5.png" },
-	{ name: "Gain Tyre polish (4 ltr)", image: "6.PNG" },
+	{ name: "Gain Tyre polish (4 ltr)", image: "6.png" },
 	{ name: "Gain apple hand wash (4 ltr)", image: "7.png" },
 	{ name: "Gain mango air freshener (4 ltr)", image: "8.png" },
 	{ name: "Gain cinnamon disinfectant (4 ltr)", image: "9.png" },
