@@ -13,7 +13,7 @@ const products = [
 	{ name: "Gain dash board shine (4 ltr)", image: "12.PNG" },
 	{ name: "Gain red berry air freshener (4 ltr)", image: "13.PNG" },
 	{ name: "Gain floral disinfectant (4 ltr)", image: "14.PNG" },
-	{ name: "Gain lemon hand wash (4 ltr)", image: "15.PNG" }
+	{ name: "Gain lemon hand wash (4 ltr)", image: "15.png" }
 ];
 
 function loadHomeProducts() {
