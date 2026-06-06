@@ -32,3 +32,4 @@ function loadHomeProducts() {
         container.appendChild(div);
     });
 }
+loadHomeProducts();
