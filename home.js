@@ -13,9 +13,17 @@ const products = [
 	{ name: "Gain dash board shine (4 ltr)", image: "12.png" },
 	{ name: "Gain red berry air freshener (4 ltr)", image: "13.png" },
 	{ name: "Gain floral disinfectant (4 ltr)", image: "14.png" },
-	{ name: "Gain lemon hand wash (4 ltr)", image: "15.png" }
+	{ name: "Gain lemon hand wash (4 ltr)", image: "15.png" },
+	{ name: "Gain strawberry air freshener (4 ltr)", image: "16.png" },
+	{ name: "Gain dish wash (10 ltr)", image: "17.png" },
+	{ name: "Gain toilet bowl cleaner", image: "18.png" },
+	{ name: "Gain all plus (10 ltr)", image: "19.png" },
+	{ name: "Gain car wash (10 ltr)", image: "20.png" },
+	{ name: "Gain pine disinfectant (10ltr)", image: "21.png" },
+	{ name: "Gain jasmine air freshener (4 ltr)", image: "22.png" },
+	{ name: " Gain high power (10 ltr)", image: "23.png" },
+	{ name: "Gain high pressure (10 ltr)", image: "24.png" }
 ];
-
 function loadHomeProducts() {
     let container = document.getElementById("products");
     container.innerHTML = "";
@@ -32,4 +40,5 @@ function loadHomeProducts() {
         container.appendChild(div);
     });
 }
+
 loadHomeProducts();
