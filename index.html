@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gain Chem Industries</title>
+
+<link rel="icon" type="image/png" href="logo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f5faf8;
+    color: #17212b;
+    overflow-x: hidden;
+}
+
+:root {
+    --blue: #0066cc;
+    --blue-dark: #004b91;
+    --green: #009966;
+    --green-dark: #007a51;
+    --light-green: #eaf8f2;
+    --light-blue: #edf6ff;
+    --dark: #102a43;
+    --text: #52606d;
+    --white: #ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    background: rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+
+    min-height: 78px;
+
+    padding: 10px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    background: white;
+
+    padding: 4px;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.logo-text {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+.logo-text span {
+    color: var(--green);
+}
+
+
+/* MENU */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    list-style: none;
+}
+
+.menu a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #263238;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    padding: 10px 0;
+
+    transition: 0.3s;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--green)
+    );
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--blue);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* CONTACT BUTTON */
+
+.nav-contact {
+    background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
+
+    color: white !important;
+
+    padding: 11px 20px !important;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,102,204,0.25);
+}
+
+.nav-contact::after {
+    display: none;
+}
+
+.nav-contact:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+.hero {
+    margin-top: 78px;
+}
+
+.slider {
+    width: 100%;
+    height: 620px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.05);
+
+    transition: transform 6s ease;
+}
+
+.slide.active img {
+    transform: scale(1);
+}
+
+
+/* DARK GRADIENT */
+
+.slide::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,35,70,0.82),
+            rgba(0,65,80,0.45),
+            rgba(0,0,0,0.15)
+        );
+}
+
+
+/* HERO CONTENT */
+
+.slide-content {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+    left: 8%;
+
+    transform: translateY(-50%);
+
+    max-width: 650px;
+
+    color: white;
+}
+
+.slide-tag {
+    display: inline-block;
+
+    background: rgba(255,255,255,0.16);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    backdrop-filter: blur(8px);
+
+    padding: 8px 17px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.slide-content h1 {
+    font-size: clamp(40px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+
+    font-weight: 800;
+}
+
+.slide-content h1 span {
+    color: #66e0ae;
+}
+
+.slide-content p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #edfaff;
+
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: white;
+
+    color: var(--blue);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+
+    background: #eafff5;
+
+    color: var(--green-dark);
+}
+
+
+/* SLIDER BUTTONS */
+
+.slider-btn {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    background: rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.slider-btn:hover {
+    background: var(--green);
+
+    transform: translateY(-50%) scale(1.08);
+}
+
+.prev {
+    left: 25px;
+}
+
+.next {
+    right: 25px;
+}
+
+
+/* DOTS */
+
+.slider-dots {
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: rgba(255,255,255,0.5);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.dot.active {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats {
+    position: relative;
+
+    z-index: 20;
+
+    margin-top: -55px;
+}
+
+.stats-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px 35px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.stat {
+    text-align: center;
+
+    padding: 10px;
+
+    border-right: 1px solid #e5e5e5;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat h3 {
+    font-size: 28px;
+
+    color: var(--blue);
+
+    margin-bottom: 5px;
+}
+
+.stat p {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 25px;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.section-title .small-title {
+    display: inline-block;
+
+    color: var(--green);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    color: var(--dark);
+
+    margin-bottom: 12px;
+}
+
+.section-title h2 span {
+    color: var(--blue);
+}
+
+.section-title p {
+    color: var(--text);
+
+    max-width: 650px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: white;
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+
+    height: 440px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.about-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    left: -18px;
+    bottom: -18px;
+
+    background: var(--green);
+
+    border-radius: 20px;
+
+    z-index: -1;
+}
+
+.about-text h3 {
+    color: var(--blue);
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--text);
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+
+    font-size: 15px;
+}
+
+.about-points {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.about-point {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #34495e;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+.about-point span {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--light-green);
+
+    color: var(--green);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   VISION MISSION
+========================================================= */
+
+.vm-section {
+    background:
+        linear-gradient(
+            135deg,
+            #edf7ff,
+            #edf9f4
+        );
+}
+
+.vm-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+}
+
+.vm-card {
+    position: relative;
+
+    background: white;
+
+    padding: 45px 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.vm-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: var(--blue);
+}
+
+.vm-card.mission::before {
+    background: var(--green);
+}
+
+.vm-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.vm-icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto auto 20px;
+
+    border-radius: 50%;
+
+    background: var(--light-blue);
+
+    font-size: 34px;
+}
+
+.mission .vm-icon {
+    background: var(--light-green);
+}
+
+.vm-card h3 {
+    color: var(--blue);
+
+    font-size: 27px;
+
+    margin-bottom: 15px;
+}
+
+.vm-card.mission h3 {
+    color: var(--green);
+}
+
+.vm-card p {
+    color: var(--text);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products-section {
+    background: #ffffff;
+}
+
+.categories {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+}
+
+.category-btn {
+    border: 1px solid #cbd9e6;
+
+    background: white;
+
+    color: #456;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.category-btn:hover {
+    border-color: var(--blue);
+
+    color: var(--blue);
+}
+
+.category-btn.active {
+    color: white;
+
+    border-color: transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--green)
+        );
+
+    box-shadow: 0 5px 15px rgba(0,102,204,0.2);
+}
+
+
+/* PRODUCT GRID */
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 28px;
+}
+
+.product-card {
+    background: white;
+
+    border: 1px solid #e8eef2;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-9px);
+
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+
+    border-color: #d6e8f3;
+}
+
+.product-image {
+    height: 240px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f8ff,
+            #f0faf6
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 15px;
+
+    transition: 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: var(--green);
+
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: var(--dark);
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    min-height: 50px;
+}
+
+.product-category {
+    display: inline-block;
+
+    background: var(--light-blue);
+
+    color: var(--blue);
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #effaf5
+        );
+}
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 35px;
+}
+
+.contact-info {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-info h3 {
+    font-size: 27px;
+
+    color: var(--blue);
+
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    min-width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--light-green);
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.contact-item strong {
+    display: block;
+
+    color: var(--dark);
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+}
+
+.contact-item span {
+    color: var(--text);
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.map {
+    min-height: 450px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+
+    min-height: 450px;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    padding: 70px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--green)
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 650px;
+
+    margin: auto auto 25px;
+
+    line-height: 1.7;
+
+    color: #eafff7;
+}
+
+.cta-button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: white;
+
+    color: var(--blue);
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+
+    background: #eafff5;
+
+    color: var(--green-dark);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #082c43;
+
+    color: white;
+
+    padding: 50px 25px 25px;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 35px;
+}
+
+.footer-company {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.footer-company span {
+    color: #55d69b;
+}
+
+.footer-text {
+    color: #b9d1df;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+.footer-title {
+    font-size: 17px;
+
+    margin-bottom: 18px;
+
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+
+    color: #b9d1df;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #55d69b;
+}
+
+.footer-contact {
+    color: #b9d1df;
+
+    line-height: 1.9;
+
+    font-size: 14px;
+}
+
+.copyright {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    text-align: center;
+
+    color: #9fb5c3;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+    z-index: 5000;
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.top-btn {
+    position: fixed;
+
+    right: 25px;
+    bottom: 92px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 5000;
+
+    font-size: 18px;
+}
+
+.top-btn.show {
+    display: block;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition: 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 850px) {
+
+    .navbar {
+        min-height: 70px;
+
+        padding: 8px 15px;
+    }
+
+    .logo-area img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text {
+        font-size: 17px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .nav-contact {
+        padding: 8px 12px !important;
+    }
+
+    .slider {
+        height: 520px;
+    }
+
+    .slide-content {
+        left: 7%;
+        right: 7%;
+    }
+
+    .slide-content h1 {
+        font-size: 42px;
+    }
+
+    .stats-container {
+        margin: 0 20px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .stat {
+        border-right: none;
+
+        border-bottom: 1px solid #eee;
+
+        padding: 15px;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+
+    .about-container,
+    .vm-container,
+    .contact-container,
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 320px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 31px;
+    }
+
+    .about-points {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        gap: 30px;
+    }
+}
+
+
+@media(max-width: 550px) {
+
+    .menu {
+        gap: 8px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .menu li:nth-child(3) {
+        display: none;
+    }
+
+    .slider {
+        height: 480px;
+    }
+
+    .slide-content h1 {
+        font-size: 34px;
+    }
+
+    .slide-content p {
+        font-size: 15px;
+    }
+
+    .slider-btn {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .stats {
+        margin-top: -35px;
+    }
+
+    .stats-container {
+        padding: 15px;
+    }
+
+    .cta h2 {
+        font-size: 29px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo-area">
+
+        <img
+            src="logo.jpg"
+            alt="Gain Chem Industries Logo">
+
+        <div class="logo-text">
+            Gain <span>Chem Industries</span>
+        </div>
+
+    </div>
+
+
+    <ul class="menu">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#products">Products</a>
+        </li>
+
+        <li>
+            <a href="#contact" class="nav-contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home" class="hero">
+
+<div class="slider">
+
+    <!-- SLIDE 1 -->
+
+    <div class="slide active">
+
+        <img src="img/sl1.jpg"
+             alt="Gain Chem Industries">
+
+        <div class="slide-content">
+
+            <div class="slide-tag">
+                GAIN CHEM INDUSTRIES
+            </div>
+
+            <h1>
+                Quality Chemical
+                <span>Solutions</span>
+            </h1>
+
+            <p>
+                Reliable home care and cleaning product
+                solutions designed for quality,
+                performance and customer satisfaction.
+            </p>
+
+            <a href="#products" class="hero-btn">
+                Explore Products →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLIDE 2 -->
+
+    <div class="slide">
+
+        <img src="img/sl.jpg"
+             alt="Quality Products">
+
+        <div class="slide-content">
+
+            <div class="slide-tag">
+                QUALITY & RELIABILITY
+            </div>
+
+            <h1>
+                Products You Can
+                <span>Trust</span>
+            </h1>
+
+            <p>
+                Quality products manufactured with
+                attention to performance and customer needs.
+            </p>
+
+            <a href="#about" class="hero-btn">
+                Learn More →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SLIDE 3 -->
+
+    <div class="slide">
+
+        <img src="img/sl2.jpg"
+             alt="Trusted Solutions">
+
+        <div class="slide-content">
+
+            <div class="slide-tag">
+                CUSTOMER FOCUSED
+            </div>
+
+            <h1>
+                Innovative
+                <span>Solutions</span>
+            </h1>
+
+            <p>
+                Supporting businesses with dependable
+                products and solutions across Sri Lanka.
+            </p>
+
+            <a href="#contact" class="hero-btn">
+                Contact Us →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="slider-btn prev"
+        onclick="previousSlide()">
+        ❮
+    </button>
+
+    <button
+        class="slider-btn next"
+        onclick="nextSlide()">
+        ❯
+    </button>
+
+
+    <div class="slider-dots" id="sliderDots"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+<div class="stats-container">
+
+    <div class="stat">
+
+        <h3>Quality</h3>
+
+        <p>
+            Reliable Product Standards
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>Trusted</h3>
+
+        <p>
+            Serving Businesses Across Sri Lanka
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>Professional</h3>
+
+        <p>
+            Customer Focused Solutions
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about" class="about">
+
+<div class="section">
+
+    <div class="section-title reveal">
+
+        <span class="small-title">
+            About Our Company
+        </span>
+
+        <h2>
+            About <span>Gain Chem</span>
+        </h2>
+
+        <p>
+            Quality, experience and customer-focused
+            chemical product solutions.
+        </p>
+
+    </div>
+
+
+    <div class="about-container">
+
+
+        <div class="about-image reveal">
+
+            <img
+                src="img/about1.png"
+                alt="Gain Chem Industries">
+
+        </div>
+
+
+        <div class="about-text reveal">
+
+            <h3>
+                Gain Chem Industries
+            </h3>
+
+            <p>
+                GAIN Chem Industries is a leading
+                manufacturing company in the home care
+                cleaning products sector in Sri Lanka.
+                Our manufacturing facility is located at
+                No. 135, Maloes Lake, Kuda Uduwa, Horana.
+            </p>
+
+            <p>
+                GAIN Chem Industries is a single-owner
+                company founded by its CEO, Mr. Nuwan
+                Kulathunga, who provides direct supervision
+                over the manufacturing process and is
+                responsible for administrative functions
+                and workforce management.
+            </p>
+
+            <p>
+                The company operates a dedicated production
+                plant for home care product manufacturing,
+                where management and employees have
+                acquired extensive experience and expertise
+                in production operations and quality control.
+            </p>
+
+            <div class="about-points">
+
+                <div class="about-point">
+                    <span>✓</span>
+                    Quality Products
+                </div>
+
+                <div class="about-point">
+                    <span>✓</span>
+                    Customer Focused
+                </div>
+
+                <div class="about-point">
+                    <span>✓</span>
+                    Reliable Solutions
+                </div>
+
+                <div class="about-point">
+                    <span>✓</span>
+                    Professional Service
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     VISION & MISSION
+===================================================== -->
+
+<section class="vm-section">
+
+<div class="section">
+
+    <div class="section-title reveal">
+
+        <span class="small-title">
+            Our Direction
+        </span>
+
+        <h2>
+            Vision & <span>Mission</span>
+        </h2>
+
+        <p>
+            Our commitment to quality, innovation
+            and customer satisfaction.
+        </p>
+
+    </div>
+
+
+    <div class="vm-container">
+
+
+        <div class="vm-card reveal">
+
+            <div class="vm-icon">
+                👁️
+            </div>
+
+            <h3>
+                Vision
+            </h3>
+
+            <p>
+                To become the leading one-stop solution
+                provider for home care product needs,
+                offering endless possibilities.
+            </p>
+
+        </div>
+
+
+        <div class="vm-card mission reveal">
+
+            <div class="vm-icon">
+                🎯
+            </div>
+
+            <h3>
+                Mission
+            </h3>
+
+            <p>
+                To deliver customer-centric services while
+                expanding our supply chain to the global
+                market, offering sustainable and innovative
+                solutions, and maintaining our reputation as
+                a high-quality home care product manufacturer.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section id="products" class="products-section">
+
+<div class="section">
+
+    <div class="section-title reveal">
+
+        <span class="small-title">
+            Our Products
+        </span>
+
+        <h2>
+            Gain Chem <span>Products</span>
+        </h2>
+
+        <p>
+            Explore our range of quality home care
+            and cleaning products.
+        </p>
+
+    </div>
+
+
+    <div
+        class="categories"
+        id="categories">
+    </div>
+
+
+    <div
+        class="products"
+        id="productContainer">
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <h2>
+        Looking for Quality Chemical Products?
+    </h2>
+
+    <p>
+        Get in touch with Gain Chem Industries
+        to discuss your product requirements
+        and business needs.
+    </p>
+
+    <a
+        href="#contact"
+        class="cta-button">
+        Contact Gain Chem →
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact" class="contact">
+
+<div class="section">
+
+    <div class="section-title reveal">
+
+        <span class="small-title">
+            Get In Touch
+        </span>
+
+        <h2>
+            Contact <span>Us</span>
+        </h2>
+
+        <p>
+            We are happy to hear from you.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <div class="contact-info reveal">
+
+            <h3>
+                Gain Chem Industries
+            </h3>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <strong>
+                        Address
+                    </strong>
+
+                    <span>
+                        No. 135, Malos Ela Road,<br>
+                        Kuda Uduwa, Horana,<br>
+                        Sri Lanka.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <div>
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <span>
+                        070 330 1302<br>
+                        070 330 1303<br>
+                        034 226 4410
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <span>
+                        gainchem.gi@gmail.com
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    🕐
+                </div>
+
+                <div>
+
+                    <strong>
+                        Business Hours
+                    </strong>
+
+                    <span>
+                        Monday - Friday<br>
+                        8:00 AM - 5:00 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="map reveal">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3265.6832477000794!2d80.077831!3d6.750824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNDUnMDMuMCJOIDgwwrAwNCc0MC4yIkU!5e1!3m2!1sen!2slk!4v1764311271583!5m2!1sen!2slk"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-container">
+
+
+    <div>
+
+        <div class="footer-company">
+            Gain <span>Chem Industries</span>
+        </div>
+
+        <p class="footer-text">
+
+            Quality chemical products and solutions
+            for businesses across Sri Lanka.
+
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <div class="footer-title">
+            Quick Links
+        </div>
+
+        <ul class="footer-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About Us</a>
+            </li>
+
+            <li>
+                <a href="#products">Products</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <div class="footer-title">
+            Contact
+        </div>
+
+        <div class="footer-contact">
+
+            No. 135, Malos Ela Road,<br>
+            Kuda Uduwa, Horana,<br>
+            Sri Lanka.<br><br>
+
+            070 330 1302<br>
+            gainchem.gi@gmail.com
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Gain Chem Industries.
+    All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+    href="https://wa.me/94703301302"
+    target="_blank"
+    class="whatsapp"
+    title="Contact us on WhatsApp">
+
+    ☎
+
+</a>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    class="top-btn"
+    id="topBtn"
+    onclick="window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })">
+
+    ↑
+
+</button>
+
+
+<script>
+
+/* =========================================================
+   PRODUCT ARRAY
+========================================================= */
+
+const products = [
+
+    {
+        image: "1.png",
+        name: "Gain Air Freshener Pink Mist (4 Ltr)",
+        category: "Industrial Chemicals"
+    },
+
+    {
+        image: "2.jpg",
+        name: "Gain All Plus (4 Ltr)",
+        category: "Industrial Chemicals"
+    },
+
+    {
+        image: "3.jpg",
+        name: "Gain Toilet Bowl Cleaner (4 Ltr)",
+        category: "Cleaning Chemicals"
+    },
+
+    {
+        image: "4.jpg",
+        name: "Gain Lavender Air Freshener (4 Ltr)",
+        category: "Cleaning Chemicals"
+    },
+
+    {
+        image: "5.jpg",
+        name: "Gain Dish Wash (4 Ltr)",
+        category: "Cleaning Chemicals"
+    },
+
+    {
+        image: "6.jpg",
+        name: "Gain Tyre Polish (4 Ltr)",
+        category: "Water Treatment"
+    },
+
+    {
+        image: "7.jpg",
+        name: "Gain Apple Hand Wash (4 Ltr)",
+        category: "Agriculture"
+    },
+
+    {
+        image: "8.jpg",
+        name: "Gain Mango Air Freshener (4 Ltr)",
+        category: "Agriculture"
+    },
+
+    {
+        image: "9.jpg",
+        name: "Gain Cinnamon Disinfectant (4 Ltr)",
+        category: "Agriculture"
+    },
+
+    {
+        image: "10.jpg",
+        name: "Gain Pink Mist Air Freshener (4 Ltr)",
+        category: "Agriculture"
+    },
+
+    {
+        image: "11.jpg",
+        name: "Gain Dashboard Shine (4 Ltr)",
+        category: "Water Treatment"
+    },
+
+    {
+        image: "12.jpg",
+        name: "Gain Red Berry Air Freshener (4 Ltr)",
+        category: "Water Treatment"
+    },
+
+    {
+        image: "13.jpg",
+        name: "Gain Floral Disinfectant (4 Ltr)",
+        category: "Water Treatment"
+    }
+
+];
+
+
+/* =========================================================
+   CATEGORY DISPLAY
+========================================================= */
+
+function displayCategories() {
+
+    const categoryContainer =
+        document.getElementById("categories");
+
+    const categories = [
+        "All",
+        ...new Set(
+            products.map(
+                product => product.category
+            )
+        )
+    ];
+
+    categoryContainer.innerHTML = "";
+
+    categories.forEach(
+        (category, index) => {
+
+            const button =
+                document.createElement("button");
+
+            button.className =
+                "category-btn";
+
+            if (index === 0) {
+                button.classList.add("active");
+            }
+
+            button.textContent =
+                category;
+
+            button.onclick = function() {
+
+                document
+                    .querySelectorAll(
+                        ".category-btn"
+                    )
+                    .forEach(btn =>
+                        btn.classList.remove(
+                            "active"
+                        )
+                    );
+
+                button.classList.add("active");
+
+                displayProducts(category);
+
+            };
+
+            categoryContainer.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   PRODUCT DISPLAY
+========================================================= */
+
+function displayProducts(category = "All") {
+
+    const container =
+        document.getElementById(
+            "productContainer"
+        );
+
+    container.innerHTML = "";
+
+    let filteredProducts;
+
+    if (category === "All") {
+
+        /*
+           Show only first 8 products
+        */
+
+        filteredProducts =
+            products.slice(0, 8);
+
+    } else {
+
+        filteredProducts =
+            products.filter(
+                product =>
+                    product.category === category
+            );
+
+    }
+
+
+    if (filteredProducts.length === 0) {
+
+        container.innerHTML = `
+            <p style="
+                text-align:center;
+                width:100%;
+                color:#777;
+                padding:40px;
+            ">
+                No products found.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    filteredProducts.forEach(
+        (product, index) => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "product-card reveal";
+
+            card.innerHTML = `
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        GAIN
+                    </span>
+
+                    <img
+                        src="img/products/${product.image}"
+                        alt="${product.name}"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <span class="product-category">
+                        ${product.category}
+                    </span>
+
+                </div>
+
+            `;
+
+            container.appendChild(card);
+
+            setTimeout(() => {
+
+                card.classList.add("visible");
+
+            }, index * 80);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+let currentSlide = 0;
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const dotsContainer =
+    document.getElementById("sliderDots");
+
+
+/* CREATE DOTS */
+
+slides.forEach(
+    (slide, index) => {
+
+        const dot =
+            document.createElement("button");
+
+        dot.className = "dot";
+
+        if (index === 0) {
+            dot.classList.add("active");
+        }
+
+        dot.onclick = () => {
+            showSlide(index);
+        };
+
+        dotsContainer.appendChild(dot);
+
+    }
+);
+
+
+function showSlide(index) {
+
+    if (index >= slides.length) {
+        index = 0;
+    }
+
+    if (index < 0) {
+        index = slides.length - 1;
+    }
+
+    currentSlide = index;
+
+
+    slides.forEach(
+        slide =>
+            slide.classList.remove(
+                "active"
+            )
+    );
+
+
+    document
+        .querySelectorAll(".dot")
+        .forEach(
+            dot =>
+                dot.classList.remove(
+                    "active"
+                )
+        );
+
+
+    slides[currentSlide]
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(".dot")
+        [currentSlide]
+        .classList.add("active");
+
+}
+
+
+function nextSlide() {
+
+    showSlide(
+        currentSlide + 1
+    );
+
+}
+
+
+function previousSlide() {
+
+    showSlide(
+        currentSlide - 1
+    );
+
+}
+
+
+/* AUTO SLIDER */
+
+setInterval(
+    () => {
+
+        nextSlide();
+
+    },
+    5000
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function revealElements() {
+
+    const elements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+    elements.forEach(
+        element => {
+
+            const position =
+                element.getBoundingClientRect()
+                    .top;
+
+            if (
+                position <
+                window.innerHeight - 80
+            ) {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+window.addEventListener(
+    "scroll",
+    revealElements
+);
+
+window.addEventListener(
+    "load",
+    revealElements
+);
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+    document.getElementById(
+        "topBtn"
+    );
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 500) {
+
+            topBtn.classList.add(
+                "show"
+            );
+
+        } else {
+
+            topBtn.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+displayCategories();
+
+displayProducts("All");
+
+</script>
+
+</body>
+</html>
